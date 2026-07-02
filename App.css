@@ -1,0 +1,148 @@
+.app {
+    background: url('./assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+/* --- 1. Fix Layout Overlaps & Text Visibility --- */
+.view-cars-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ensure headings have room and don't collide with buttons */
+.view-cars-container h2 {
+    color: #ffffff !important;
+    margin-bottom: 1.5rem;
+}
+
+/* Space out the main call to action button */
+a[href="/create"], .btn-primary {
+    display: inline-block;
+    margin-bottom: 2.5rem !important;
+}
+
+/* --- 2. Organize Cards with Grid --- */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Build a high-contrast card background so text is readable */
+.car-card {
+    background: rgba(20, 20, 25, 0.85) !important; /* Dark semi-transparent slate */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.car-card h3 {
+    color: #ffffff !important;
+    margin-bottom: 0.5rem;
+}
+
+.car-card p {
+    color: #cccccc !important;
+    margin-bottom: 1.5rem;
+}
+
+/* --- 3. Brighten Text Action Links --- */
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* Fix the unreadable dark-red links */
+.card-actions a {
+    color: #00d2ff !important; /* Bright Neon Cyan for peak visibility */
+    font-weight: 700 !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-actions a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+/* Give the delete button a clean, modern look */
+.card-actions button {
+    background-color: #ff3344 !important; /* Bright action red */
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.card-actions button:hover {
+    background-color: #cc0011 !important;
+}
+/* --- Fix Details Page Action Links --- */
+.details-container {
+    padding: 2rem;
+    background: rgba(20, 20, 25, 0.85) !important; /* Semi-transparent background wrapper */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Force links in the details container to look like distinct, highly visible buttons */
+.details-container a {
+    display: inline-block;
+    color: #ffffff !important; /* White text for contrast */
+    font-weight: 700 !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    
+    /* 🛠️ This creates the space between the links so they don't run together */
+    margin: 0.5rem 1rem 0.5rem 0; 
+}
+
+/* Style the "Modify Build" button link */
+.details-container a.btn-secondary,
+.details-container a[href^="/edit"] {
+    background-color: #00d2ff !important; /* Vibrant Neon Cyan */
+    color: #000000 !important; /* Dark text for perfect readability on cyan */
+}
+
+.details-container a.btn-secondary:hover {
+    background-color: #00b4db !important;
+    transform: translateY(-1px);
+}
+
+/* Style the "Back to Fleet" link */
+.details-container a.back-link,
+.details-container a[href="/"],
+.details-container a[href="/customcars"] {
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Subtle gray button look */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.details-container a.back-link:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
